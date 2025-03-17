@@ -4,6 +4,7 @@ import DarkLogo from "../assets/DarkMode.png";
 import LightLogo from "../assets/LightMode.png";
 import { useTheme } from "../context/theme-provider";
 import { Moon, Sun } from "lucide-react";
+import CitySearch from "./CitySearch";
 
 function Header() {
   const { theme, setTheme } = useTheme();
@@ -19,9 +20,11 @@ function Header() {
           />
         </Link>
 
-        <div>
+        <div className="flex gap-4">
           {/* <p>Search</p>
           <p>Theme Toggle</p> */}
+          <CitySearch />
+
           <div
             onClick={() => setTheme(isDark ? "light" : "dark")}
             className={`flex items-center cursor-pointer transition-transform duration-500 ${
